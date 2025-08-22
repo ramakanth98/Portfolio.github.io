@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "./",
   plugins: [react()],
-  assetsInclude: ['**/*.PNG', '**/*.png', '**/*.JPG', '**/*.jpeg', '**/*.gif', '**/*.svg'],
+  base: '/Portfolio.github.io/',
+  assetsInclude: ['**/*.PNG', '**/*.png', '**/*.JPG', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
 })

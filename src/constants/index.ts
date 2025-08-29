@@ -24,6 +24,8 @@ export interface Project {
 export interface Contact {
   phoneNo: string;
   email: string;
+  linkedin: string;
+  github: string;
 }
 
 export const EXPERIENCES: Experience[] = [
@@ -89,6 +91,77 @@ export const PROJECTS: Project[] = [
 ];
 
 export const CONTACT: Contact = {
-  phoneNo: "+1 (980) 944-6262 ",
-  email: "aramakanth1998@gmail.com",
+  phoneNo: "(980) 944-6262",
+  email: "arkrayalaso@gmail.com",
+  linkedin: "https://www.linkedin.com/in/ramakantha",
+  github: "https://github.com/ramakanth98",
+};
+
+export const SKILLS = {
+  "Programming Languages": ["Python", "JavaScript/TypeScript", "Go", "Java", "C/C++", "HTML5", "CSS3", "Bash/Shell Scripting"],
+  "Frontend Development": ["React", "Next.js (SSR/ISR)", "Tailwind CSS", "Bootstrap", "Redux", "Figma"],
+  "Backend and APIs": ["FastAPI", "Flask", "Django", "Node.js", "GraphQL", "REST", "gRPC", "Celery", "Redis", "Kafka", "RabbitMQ"],
+  "AI & Agentic Automation": ["LLMs", "LLMOps", "n8n", "Voiceflow", "RAG", "Firecrawl", "Feature Stores"],
+  "Data & Search": ["MS Fabric Lakehouse", "PostgreSQL", "MySQL", "MongoDB", "Elasticsearch", "pandas"],
+  "DevOps & Cloud": ["Docker", "Kubernetes", "GitHub Actions", "Jenkins", "AWS (EC2, Lambda, S3, RDS, EKS)", "Vercel"],
+  "Security & Payments": ["OAuth2", "JWT", "Authorize.net tokenization", "Rate Limiting"],
+};
+
+export const CERTIFICATIONS = [
+  {
+    name: "AWS Certified Developer",
+    level: "Associate",
+    issuer: "Amazon Web Services",
+    date: "Sep 2023",
+    link: "https://www.credly.com/badges/67aa5efb-0ef1-4cf4-a03d-64daf6125bbb/public_url"
+  }
+];
+
+export const EDUCATION = [
+  {
+    degree: "Master of Science, Computer Science",
+    school: "University of North Carolina at Charlotte, Charlotte, NC",
+    date: "Dec 2023",
+    gpa: "3.8/4.0",
+    details: "Fellowship: Claudia M Reynolds Graduate Fellowship 2023 - 2024 based on academic standing and exemplary performance.",
+    link: "https://gradadmissions.charlotte.edu/24-graduate-students-awarded-donor-supported-fellowships-for-2023-24/"
+  },
+  {
+    degree: "Bachelor of Technology, Information Science",
+    school: "New Horizon College of Engineering, Bangalore, India",
+    date: "July 2020",
+    gpa: "4.0/4.0"
+  }
+];
+
+export const OPEN_SOURCE = [
+  {
+    name: "ProgramEarth",
+    description: "Contributor, Maintainer & Fellowship Mentor since March 2024. Active in open source development and mentoring.",
+    projects: [
+      {
+        title: "Chatbot Server (Node.js)",
+        description: "Maintained a modular chatbot backend with OpenAI LLM integration, Twilio SMS flows, EdX API sync, and Auth0 auth; backed by PostgreSQL (Sequelize); added Jest tests, Docker/Compose dev setup, and API documentation for reliable CI runs.",
+        repo: "https://github.com/OpenSourceFellows/chatbot"
+      },
+      {
+        title: "Map Dashboard Web Application (Vue 3 + Vuetify)",
+        description: "Contributed to a geospatial data-viz app: base map + layered overlays (water polygons, canopy density), clustered markers, rich tooltips, and filters; ETL from Notion API into PostgreSQL/PostGIS; geospatial formatting via Tableau; automation with GitHub Actions/cron.",
+        repo: "https://github.com/OpenSourceFellows/map-dashboard"
+      }
+    ]
+  }
+];
+
+export const HACKATHON_JUDGING = {
+  description: "Judged technical depth, problem framing, and impact; mentored teams on agentic workflows, LLMOps (prompts/evals/guardrails), n8n orchestration, and production checklists (auth, secrets, observability).",
+  events: [
+    { name: "HackMIT", location: "Massachusetts Institute of Technology" },
+    { name: "HooHacks", location: "University of Virginia" },
+    { name: "WildHacks", location: "Northwestern University" },
+    { name: "HackDavis", location: "University of California, Davis" },
+    { name: "RocketHacks", location: "The University of Toledo" },
+    { name: "LingHacks", location: "Various Locations" },
+    { name: "Summer Open 2025", location: "Online" }
+  ]
 };

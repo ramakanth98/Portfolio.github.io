@@ -1,64 +1,70 @@
-import { EXPERIENCES, Experience as ExperienceType } from "../constants";
+import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
 
 const Experience: React.FC = () => {
+  const container = (delay: number) => ({
+    hidden: { x: -100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.5, delay: delay },
+    },
+  });
+
   return (
-    <div className="border-b border-neutral-900 pb-8 lg:pb-4">
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
-        className="my-12 sm:my-16 lg:my-20 text-center text-3xl sm:text-4xl lg:text-5xl font-light"
-      >
-        Experience
-      </motion.h2>
-      
-      <div className="space-y-8 lg:space-y-12">
-        {EXPERIENCES.map((experience: ExperienceType, index: number) => (
-          <motion.div 
-            key={index} 
-            className="flex flex-col lg:flex-row lg:justify-center"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
-            viewport={{ once: true }}
-          >
-            {/* Year section */}
+    <div className="border-b border-neutral-900 pb-8 lg:pb-4 lg:mb-36">
+      <div className="flex flex-col items-center text-center">
+        <motion.h2
+          variants={container(0)}
+          initial="hidden"
+          animate="visible"
+          className="pb-4 sm:pb-6 lg:pb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-thin tracking-tight"
+        >
+          Experience
+        </motion.h2>
+        
+        <motion.div
+          variants={container(0.5)}
+          initial="hidden"
+          animate="visible"
+          className="my-4 sm:my-6 max-w-4xl py-4 sm:py-6"
+        >
+          {EXPERIENCES.map((experience, index) => (
             <motion.div
-              className="w-full lg:w-1/4 mb-4 lg:mb-0"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 + index * 0.2 }}
+              className="mb-8 last:mb-0 bg-neutral-800/30 rounded-xl p-6 border border-neutral-700/50"
             >
-              <p className="text-lg sm:text-xl text-neutral-400 font-medium text-center lg:text-left">
-                {experience.year}
-              </p>
-            </motion.div>
-            
-            {/* Content section */}
-            <motion.div
-              className="w-full lg:w-3/4 lg:pl-8"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="bg-neutral-900/50 rounded-lg p-6 border border-neutral-800 hover:border-neutral-700 transition-colors">
-                <h6 className="mb-3 text-lg sm:text-xl lg:text-2xl font-semibold text-center lg:text-left">
-                  {experience.role} -{" "}
-                  <span className="text-purple-300">
-                    {experience.company}
-                  </span>
-                </h6>
+              <div className="text-center lg:text-left">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2">
+                      {experience.role}
+                    </h3>
+                    <p className="text-lg sm:text-xl text-purple-300 mb-2">
+                      {experience.company}
+                    </p>
+                    <p className="text-base sm:text-lg text-neutral-400 mb-4">
+                      {experience.year}
+                    </p>
+                  </div>
+                </div>
                 
-                <p className="mb-6 text-sm sm:text-base text-neutral-300 leading-relaxed text-center lg:text-left">
-                  {experience.description}
-                </p>
+                <div className="text-base sm:text-lg text-neutral-300 leading-relaxed mb-6">
+                  {experience.description.split('\n\n').map((paragraph, pIndex) => (
+                    <p key={pIndex} className="mb-3 last:mb-0">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
                 
                 <div className="flex flex-wrap justify-center lg:justify-start gap-2">
                   {experience.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 text-xs sm:text-sm font-medium text-purple-400 bg-neutral-800 rounded-full border border-neutral-700 hover:border-purple-500 transition-colors"
+                      className="px-3 py-1 bg-neutral-700/50 text-neutral-300 text-sm rounded-full border border-neutral-600/50"
                     >
                       {tech}
                     </span>
@@ -66,8 +72,8 @@ const Experience: React.FC = () => {
                 </div>
               </div>
             </motion.div>
-          </motion.div>
-        ))}
+          ))}
+        </motion.div>
       </div>
     </div>
   );

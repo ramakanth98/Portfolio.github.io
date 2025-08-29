@@ -3,40 +3,27 @@ import {
   SiPython,
   SiJavascript,
   SiTypescript,
-  SiGo,
-  SiCplusplus,
   SiHtml5,
   SiCss3,
   SiReact,
   SiNextdotjs,
   SiTailwindcss,
-  SiBootstrap,
   SiRedux,
-  SiFigma,
   SiFastapi,
   SiFlask,
   SiDjango,
   SiNodedotjs,
   SiGraphql,
   SiRedis,
-  SiApachekafka,
-  SiRabbitmq,
   SiOpenai,
   SiPostgresql,
   SiMysql,
   SiMongodb,
-  SiElasticsearch,
-  SiPandas,
   SiDocker,
   SiKubernetes,
-  SiGithubactions,
-  SiJenkins,
   SiVercel,
-  SiGithub,
-  SiLinkedin,
 } from "react-icons/si";
-import { FaJava, FaAws, FaCogs } from "react-icons/fa";
-import { BiShield } from "react-icons/bi";
+import { FaAws, FaCogs } from "react-icons/fa";
 
 interface TechIcon {
   icon: React.ComponentType<{ className?: string }>;

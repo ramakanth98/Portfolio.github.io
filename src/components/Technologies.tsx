@@ -93,7 +93,7 @@ const Technologies: React.FC = () => {
     // { icon: SiJenkins, color: "text-red-400", duration: 4, name: "Jenkins" },
     { icon: FaAws, color: "text-orange-400", duration: 2, name: "AWS" },
     { icon: SiVercel, color: "text-black-400", duration: 3.5, name: "Vercel" },
-    
+     
     // Security & Tools
     // { icon: BiShield, color: "text-green-500", duration: 3, name: "Security" },
     // { icon: SiGithub, color: "text-gray-400", duration: 2.5, name: "GitHub" },

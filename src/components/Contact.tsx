@@ -1,17 +1,21 @@
 import { CONTACT } from "../constants";
 import { FaLinkedin, FaGithub, FaPhone, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { trackButtonClick } from "../utils/analytics";
 
 const Contact: React.FC = () => {
-  const handleSocialClick = (url: string) => {
+  const handleSocialClick = (url: string, platform: string) => {
+    trackButtonClick(`${platform}-contact-link`);
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const handlePhoneClick = () => {
+    trackButtonClick("phone-contact");
     window.open(`tel:${CONTACT.phoneNo}`, "_self");
   };
 
   const handleEmailClick = () => {
+    trackButtonClick("email-contact");
     window.open(`mailto:${CONTACT.email}`, "_self");
   };
 
@@ -97,7 +101,7 @@ const Contact: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => handleSocialClick("https://www.linkedin.com/in/ramakantha/")}
+                onClick={() => handleSocialClick("https://www.linkedin.com/in/ramakantha/", "linkedin")}
                 className="p-4 bg-neutral-800/50 backdrop-blur-sm rounded-xl border border-neutral-700/50 hover:border-blue-500/50 transition-all duration-300 group"
                 aria-label="Open LinkedIn in new tab"
               >
@@ -107,7 +111,7 @@ const Contact: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => handleSocialClick("https://github.com/ramakanth98")}
+                onClick={() => handleSocialClick("https://github.com/ramakanth98", "github")}
                 className="p-4 bg-neutral-800/50 backdrop-blur-sm rounded-xl border border-neutral-700/50 hover:border-gray-500/50 transition-all duration-300 group"
                 aria-label="Open GitHub in new tab"
               >

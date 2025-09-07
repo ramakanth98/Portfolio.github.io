@@ -1,9 +1,11 @@
 import logo from "../assets/ARK_Logo.png";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { trackButtonClick } from "../utils/analytics";
 
 const Navbar: React.FC = () => {
-  const handleSocialClick = (url: string) => {
+  const handleSocialClick = (url: string, platform: string) => {
+    trackButtonClick(`${platform}-link`);
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
@@ -41,7 +43,7 @@ const Navbar: React.FC = () => {
               type="button"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => handleSocialClick("https://www.linkedin.com/in/ramakantha/")}
+              onClick={() => handleSocialClick("https://www.linkedin.com/in/ramakantha/", "linkedin")}
               className="cursor-pointer p-2 rounded-lg hover:bg-neutral-800/80 transition-all duration-300 group"
               aria-label="Open LinkedIn in new tab"
             >
@@ -52,7 +54,7 @@ const Navbar: React.FC = () => {
               type="button"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => handleSocialClick("https://github.com/ramakanth98")}
+              onClick={() => handleSocialClick("https://github.com/ramakanth98", "github")}
               className="cursor-pointer p-2 rounded-lg hover:bg-neutral-800/80 transition-all duration-300 group"
               aria-label="Open GitHub in new tab"
             >

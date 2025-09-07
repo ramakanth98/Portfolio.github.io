@@ -1,7 +1,12 @@
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+import { trackEvent } from "../utils/analytics";
 
 const Projects = () => {
+  const handleProjectView = (projectTitle) => {
+    trackEvent('view', 'project', projectTitle);
+  };
+
   return (
     <div className="border-b border-neutral-900 pb-4">
       <motion.h2
@@ -20,6 +25,7 @@ const Projects = () => {
               initial={{ opacity: 0, x: -100 }}
               transition={{ duration: 1 }}
               className="w-full lg:w-1/4"
+              onViewportEnter={() => handleProjectView(project.title)}
             >
               <img
                 src={project.image}

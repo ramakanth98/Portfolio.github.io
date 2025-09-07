@@ -85,7 +85,7 @@ const About: React.FC = () => {
               <motion.img
                 className="rounded-2xl w-4/5 sm:w-3/4 md:w-2/3 lg:w-2/3 max-w-sm lg:max-w-md shadow-2xl"
                 src={aboutImg}
-                alt="About Ramakanth"
+                alt="About Rama"
               />
               {/* Glow effect - adjusted for mobile: shifted right on mobile, normal on desktop */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl -z-10 transform -translate-x-4 translate-y-2 lg:-translate-x-2 lg:translate-y-2"></div>

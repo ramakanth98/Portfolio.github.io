@@ -1,4 +1,4 @@
-# Ramakanth's Portfolio
+# Rama's Portfolio
 
 I have made this portfolio using TailwindCSS, React and several libraries like react-icons, framer-motion. I have also used background gradient from https://bg.ibelick.com/.
 Hope you like it!
